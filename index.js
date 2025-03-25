@@ -20,17 +20,8 @@ function organizeFlavors(responseArray) {
 
   for (let index = 0; index < responseArray.length; index++) {
     const flavor = responseArray[index];
-    let contains = false;
 
-    // Loop thru the flavors and if it exists then we add one instead of initializing it with 1.
-
-    for (const otherFlavor in flavors) {
-      if (otherFlavor != flavor) continue;
-
-      contains = true;
-    }
-
-    if (contains) {
+    if (flavors[flavor]) {
       flavors[flavor] += 1;
     } else {
       flavors[flavor] = 1;
